@@ -13,6 +13,7 @@ const mapValues = {
     "Y": "B",
     "Z": "C",
 }
+
 const numericalValue = {
     "A": 1,
     "B": 2,
@@ -24,7 +25,7 @@ const calculate = (params) => {
     params = params.split(" ");
     let player1 = params[0];
     let player2 = mapValues[params[1]];
-    console.log(player1, player2)
+
     let myList = new LinkedList();
     const a = new Node('A')
     const b = new Node('B')
