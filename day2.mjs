@@ -38,10 +38,11 @@ const calculate = (params) => {
     if (player1 === player2) {
         points += 3;
     }
+
     points += numericalValue[player2];
     return points;
 }
 
-
 const test = rockPaperScissors.map((x) => x.split("\n").reduce((acc, cur) => acc + calculate(cur), 0));
+
 console.log(test)

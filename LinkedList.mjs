@@ -7,7 +7,8 @@ export class Node {
 export class LinkedList {
     constructor() {
         this.head = null;
-    } insertFirst(data) {
+    }
+    insertFirst(data) {
         const node = new Node(data, this.head);
         this.head = node;
     }
@@ -48,7 +49,9 @@ export class LinkedList {
             return;
         }
         this.head = this.head.next;
-    } removeLast() {
+    }
+
+    removeLast() {
         if (!this.head) {
             return;
         }
@@ -66,7 +69,9 @@ export class LinkedList {
         }
 
         previous.next = null;
-    } insertLast(data) {
+    }
+
+    insertLast(data) {
         const last = this.getLast();
         if (last) {
             last.next = new Node(data);
@@ -86,7 +91,9 @@ export class LinkedList {
             node = node.next;
         }
         return null;
-    } removeAt(index) {
+    }
+
+    removeAt(index) {
         if (!this.head) {
             return;
         } if (index === 0) {
@@ -99,7 +106,9 @@ export class LinkedList {
             return;
         }
         previous.next = previous.next.next;
-    } insertAt(data, index) {
+    }
+
+    insertAt(data, index) {
         if (!this.head) {
             this.head = new Node(data);
             return;
