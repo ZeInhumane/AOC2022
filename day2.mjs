@@ -20,7 +20,7 @@ const numericalValue = {
     "C": 3,
 }
 
-const calculate = (params) => {
+const part11 = (params) => {
     let points = 0;
     params = params.split(" ");
     let player1 = params[0];
@@ -44,6 +44,31 @@ const calculate = (params) => {
     return points;
 }
 
-const test = rockPaperScissors.map((x) => x.split("\n").reduce((acc, cur) => acc + calculate(cur), 0));
+const part22 = (params) => {
+    params = params.split(" ");
+    let player1 = params[0];
+    let player2 = params[1];
 
-console.log(test)
+    const left = numericalValue[player1];
+
+	if (player2 === 'X') {
+		// Lose
+		let right = left - 1 || 3;
+		return right;
+	} else if (player2 === 'Y') {
+		// Draw
+		return left + 3;
+	} else {
+		// Win
+		let right = (left + 1) % 3 || 3;
+		return right + 6;
+	}
+}
+
+const part1 = rockPaperScissors.map((x) => x.split("\n").reduce((acc, cur) => acc + part11(cur), 0));
+
+const part2 = rockPaperScissors.map((x) => x.split("\n").reduce((acc, cur) => acc + part22(cur), 0));
+
+
+console.log(part1)
+console.log(part2)
